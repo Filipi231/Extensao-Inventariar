@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Inventario Painter",
+  "version": "1.1.0",
+  "description": "Pinta a célula de Nova Contagem comparando com Saldo Atual. Liga/desliga pelo popup.",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": ["https://*.exemplo.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Inventario Painter"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.exemplo.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
